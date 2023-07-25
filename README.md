@@ -4,7 +4,7 @@
 
 ## Description
 
-All pipeline in [NestJS](https://github.com/nestjs/nest): Middleware, Pipes, Guards, Interceptors
+All pipeline in [NestJS](https://github.com/nestjs/nest): Middleware, Pipes, Guards, Interceptors, Exception Filters
 
 ## Installation
 
