@@ -8,11 +8,17 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { RequestService } from './request.service';
 import { AuthenticationMiddleware } from './middleware/authentication.middleware';
+import { APP_GUARD } from '@nestjs/core';
+import { AuthGuard } from './guards/auth.guard';
 
 @Module({
   imports: [],
   controllers: [AppController],
-  providers: [AppService, RequestService],
+  providers: [
+    AppService,
+    RequestService,
+    { provide: APP_GUARD, useClass: AuthGuard }, // third way of adding guard
+  ],
 })
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
